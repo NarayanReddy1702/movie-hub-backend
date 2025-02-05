@@ -4,15 +4,13 @@ require("dotenv").config({});
 const data = require("./data.js");
 const cors = require("cors");
 
-app.use(cors({
-    origin: process.env.CORS_ORIGIN
-}))
+app.use(cors())
 
 app.get("/test", (req, res) => {
     res.send("Workig");
 });
 
-app.get("/getData", (req, res) => {
+app.get("/", (req, res) => {
     res.json(data);
 });
 
